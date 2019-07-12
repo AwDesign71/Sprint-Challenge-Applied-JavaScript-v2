@@ -17,3 +17,8 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+const cardContainer = doucment.querySelector('.cards-container');
+function newsCards() {
+   const card = document.createElement('div');
+   
+}

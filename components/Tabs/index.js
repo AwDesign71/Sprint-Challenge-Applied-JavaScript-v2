@@ -7,35 +7,25 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
-/* <div class="topics">
 
-      <div class="tab active-tab">ALL</div>
-      <div class="tab">JAVASCRIPT</div>
-      <div class="tab">TECHNOLOGY</div>
-      <div class="tab">NODE.JS</div>
-      <div class="tab">jQUERY</div>
-      <div class="tab">BOOTSTRAP</div>
-      <!-- My Artricles -->
-      <div data-tab="ajax" class="tab">Ajax</div>
-      <div data-tab="xml" class="tab">XML</div>
-    </div> */
 //Getting data from API
-axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
-.then(getData =>{
-    const pullData = getData.data;
-    console.log(pullData);
-    topics.appendChild(Tabs(getData));
-});
 
+
+axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+.then(getData=> {
+    const pullData = getData.data;
+    topics.appendChild(Tabs(pullData))
+    console.log(pullData)
+})
 
 const topics = document.querySelector('.topics');
-function Tabs() {
+function Tabs(links) {
   const tab = document.createElement('div');
  
   topics.appendChild(tab);
   
   tab.classList.add('tab');
-  tab.textContent = 'All';
+  tab.textContent = links;
   return tab;
 }
 console.log(Tabs())

@@ -26,6 +26,10 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     const news3 = articleData.data.articles.technology;
     const news4 = articleData.data.articles.jquery;
     const news5 = articleData.data.articles.node;
+    
+ for(let i=0; i < news.length; i++) {
+      console.log(news)
+ }
 
    for(let i=0; i < news1.length; i++) {
        cardContainer.appendChild(newsCards(news1[i]));
@@ -57,7 +61,7 @@ const newCards = [{
      {
         headline: 'XML is a software- and hardware-independent tool for storing and transporting data.',
         authorPhoto: './assets/xml.png',
-       authorName: 'Ajax Tutorial'
+       authorName: 'XML Tutorial'
      }];
      
     newCards.forEach(newData => {

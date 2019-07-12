@@ -17,7 +17,7 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-
+const cardContainer = document.querySelector('.cards-container');
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
 .then(articleData=> {
     const news = articleData.data.articles;
@@ -43,9 +43,11 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
    for(let i=0; i < news5.length; i++) {
     cardContainer.appendChild(newsCards(news5[i]));
    }
-    console.log(news)
-});
-
+})
+ .catch((error)=> {
+    cardContainer.textContent = 'Image(s) are not loading correctly, please try again'
+    console.log(error);
+ })
 // My cards
 const newCards = [{
     headline: 'AJAX stands for Asynchronous JavaScript and XML. AJAX is a new technique for creating better, faster, and more interactive web applications',
@@ -58,10 +60,9 @@ const newCards = [{
        authorName: 'Ajax Tutorial'
      }];
      
-const cardContainer = document.querySelector('.cards-container');
-newCards.forEach(newData => {
-    cardContainer.appendChild(newsCards(newData));
-});
+    newCards.forEach(newData => {
+        cardContainer.appendChild(newsCards(newData));
+     });
 function newsCards(heading) {
     //Creating the elements
    const card = document.createElement('div');

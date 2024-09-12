@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+HTML and XML are document model object that can be manipulated by adding style and content to change the structure of the document. 
+
 2. What is an event?
+
+When using Javascript events, you can make the page react to buttons, click, keyboard shortcuts, making mouse interaction with the elements, and do things in the form fields. Also, it can load and unload JavaScript’s tasks.
 
 3. What is an event listener?
 
+An event listener, listening when activities take place by the document’s handler which is a mouse, clicks, resizing, load, and focus, but there are other handlers as well.
+
 4. Why would we convert a NodeList into an Array?
 
+The reason for making the node list into an array is because you don’t have to create it from scratch if you have a collection of HTML element already done. But you do it if you need to target specific content specifically.
+
 5. What is a component?
+
+A component is a Javascript logic that is reusable throughout an API without recreating the same code. They can speed up the process of building web apps, and they are useful for when you need to add more content without repeating yourself.
 
 ### Git Set up
 
